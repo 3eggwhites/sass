@@ -1,6 +1,26 @@
 @import './resets';
 @import './variables';
 
+//added function to calculate font weight, use function only for compute and not for styling
+//for styling use mixins 
+@function weight($weight-name) {
+    @return map-get($font-wights , medium );
+}
+
+@mixin flexbox($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin theme($light-theme: true) {
+    @if($light-theme) {
+        background: lighten($primary-color, 100%);
+        color: darken($color: $text-color, $amount: 100%);
+    }
+}
+
 body {
     background: $primary-color;
     color: $text-color;
@@ -8,6 +28,7 @@ body {
 
 //nesting
 .main {
+    @include flexbox(row);
     width: 80%;
     margin: 0 auto;
 
@@ -16,10 +37,14 @@ body {
     // & means the parent class of the nested class
     // #{&} is used to properly nest the child element under the parent element. if we only use & then a new class will be created like .main__paragraph wich will be outside .main class
     #{&}__paragraph {
-        font-weight: map-get($font-wights , medium );
+        font-weight: weight(medium);
         // nesting again to add on hover color behaviour
         &:hover {
             color: $accent-color;
         }
     }
+}
+
+.light {
+    @include theme(true);
 }
