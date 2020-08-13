@@ -1,6 +1,18 @@
 body {
   background: grey;
   color: white;
-  font-weight: 700;
+}
+
+.main {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.main .main__paragraph {
+  font-weight: 500;
+}
+
+.main .main__paragraph:hover {
+  color: orange;
 }
 /*# sourceMappingURL=main.css.map */

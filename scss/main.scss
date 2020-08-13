@@ -12,5 +12,22 @@ $font-wights: (
 body {
     background: $primary-color;
     color: $text-color;
-    font-weight: map-get($font-wights , bold );
+}
+
+//nesting
+.main {
+    width: 80%;
+    margin: 0 auto;
+
+    //nesting css of the paragraph
+    //rather than targeting the element we can use class to specify the style
+    // & means the parent class of the nested class
+    // #{&} is used to properly nest the child element under the parent element. if we only use & then a new class will be created like .main__paragraph wich will be outside .main class
+    #{&}__paragraph {
+        font-weight: map-get($font-wights , medium );
+        // nesting again to add on hover color behaviour
+        &:hover {
+            color: $accent-color;
+        }
+    }
 }
