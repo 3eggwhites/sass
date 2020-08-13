@@ -1,3 +1,16 @@
+// Creating sass variables
+$primary-color: grey;
+$accent-color: orange;
+$text-color: white;
+//a map variable
+$font-wights: (
+    "regular": 400,
+    "medium": 500,
+    "bold": 700
+);
+
 body {
-    background: blue;
+    background: $primary-color;
+    color: $text-color;
+    font-weight: map-get($font-wights , bold );
 }
