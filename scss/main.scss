@@ -1,13 +1,5 @@
-// Creating sass variables
-$primary-color: grey;
-$accent-color: orange;
-$text-color: white;
-//a map variable
-$font-wights: (
-    "regular": 400,
-    "medium": 500,
-    "bold": 700
-);
+@import './resets';
+@import './variables';
 
 body {
     background: $primary-color;

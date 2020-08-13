@@ -1,0 +1,11 @@
+// Creating sass variables
+$primary-color: grey;
+$accent-color: orange;
+$text-color: white;
+//a map variable
+$font-wights: (
+    "regular": 400,
+    "medium": 500,
+    "bold": 700
+);
+// _filename.scss are partial files, by specifying a file name with _ we are notifying sass compier that it is a partal file so no css file for this will be generated. when we import the partial files in a normal .scss file then elements of those partial files are propagated to the main .scss files.
