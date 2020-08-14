@@ -21,6 +21,12 @@
     }
 }
 
+@mixin mobileView {
+    @media (max-width: $mobile-width) {
+        @content;
+    }
+}
+
 body {
     background: $primary-color;
     color: $text-color;
@@ -42,6 +48,10 @@ body {
         &:hover {
             color: $accent-color;
         }
+    }
+
+    @include mobileView {
+        flex-direction: column;
     }
 }
 
